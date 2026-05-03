@@ -147,21 +147,22 @@ body {
 }
 
 /* IMAGE CARD ONLY */
+/* CARD (STRICT SAME SIZE) */
 .card {
-    width: 100%;
-    height: 140px;
+    width: 220px;          /* 🔑 fixed width */
+    height: 140px;         /* 🔑 fixed height */
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
 }
 
 /* IMAGE */
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;     /* 🔑 keeps same look */
+    display: block;
 }
-
 /* TEXT OUTSIDE */
 .service-item p {
     margin-top: 8px;
