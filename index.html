@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasvi Trust</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fb;
+}
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background: #0f172a;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+}
+
+/* TEXT BLOCK */
+.navbar > div:first-child {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+/* MAIN BRAND */
+.nav-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;   /* 🔥 stronger */
+    letter-spacing: 1px;
+}
+
+/* SUB BRAND */
+.nav-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;   /* 🔥 logo feel */
+    color: #60a5fa;
+    margin-top: 2px;
+}
+
+/* PROFILE */
+.profile-icon {
+    width: 36px;
+    height: 36px;
+    background: #1f2937;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+.nav-title::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #60a5fa;
+    margin-top: 3px;
+}
+
+/* HERO IMAGE */
+.hero {
+    width: 100%;
+    height: 260px;
+    background-image: url("hotel booking.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* optional smooth look */
+    box-shadow: inset 0 8px 15px rgba(0,0,0,0.3);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero {
+        height: 180px;
+    }
+}
+/* SERVICES */
+.services {
+    padding: 20px 15px;
+}
+.intro,
+.features,
+.booking,
+.services,
+.why,
+.facilities,
+.location,
+.contact {
+    margin-bottom: 10px; /* 🔑 controls gap BETWEEN sections */
+}
+.section-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+/* HORIZONTAL SCROLL */
+.services-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* HIDE SCROLLBAR */
+.services-scroll::-webkit-scrollbar {
+    display: none;
+}
+.services-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* CARD */
+/* WRAPPER */
+.service-item {
+    min-width: 220px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+/* IMAGE CARD ONLY */
+.card {
+    width: 100%;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXT OUTSIDE */
+.service-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+}
+.name {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: 0.3px;
+}
+.service-item {
+    transition: transform 0.2s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.price {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #16a34a;
+    font-weight: 600;
+    background: #ecfdf5; /* light green background */
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* SECTION */
+.booking {
+    display: flex;
+    justify-content: center;
+    padding: 25px 20px;
+    background: transparent; /* 🔑 removed background */
+}
+
+/* CARD (GLASS STYLE) */
+.booking-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 28px;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* TITLE */
+.booking-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #111827;
+    letter-spacing: 0.5px;
+}
+
+/* DATE ROW */
+.date-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABEL */
+.input-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+/* INPUT */
+.input-group input {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    background: #f9fafb;
+    transition: all 0.25s ease;
+}
+.book-btn {
+    margin-top: 15px; /* 🔑 adds gap above button */
+}
+/* INPUT FOCUS EFFECT */
+.input-group input:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    transform: scale(1.02);
+    outline: none;
+}
+
+/* BUTTON */
+.book-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #4f46e5, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.book-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(79,70,229,0.3);
+}
+
+/* MOBILE */
+@media (max-width: 500px) {
+    .date-row {
+        flex-direction: column;
+    }
+}
+/* SELECT (DROPDOWN) */
+.input-group select {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    background: #f9fafb;
+    transition: all 0.25s ease;
+}
+
+/* FOCUS EFFECT */
+.input-group select:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    outline: none;
+}
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* EACH ITEM */
+.feature {
+    flex: 1;
+}
+
+/* ICON */
+.feature i {
+    font-size: 20px;
+    color: #2563eb;
+    margin-bottom: 6px;
+}
+
+/* TEXT */
+.feature p {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+/* CARD STYLE */
+/* INTRO SECTION */
+.intro {
+    text-align: center;
+    padding: 20px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* TITLE */
+.intro h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+/* LINE UNDER TITLE */
+.intro h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #2563eb;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* TEXT */
+.intro p {
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+.input-group select {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    background: #f9fafb;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.input-group select:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    outline: none;
+}
+.input-group {
+    margin-bottom: 15px; /* 🔑 adds space between all fields */
+}
+
+/* SECTION */
+.why {
+    padding: 20px 15px;   /* 🔑 reduced from 40px */
+    margin-top: 10px;     /* 🔑 small control gap */
+    text-align: center;
+}
+
+/* TITLE */
+.why-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+/* GRID */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 🔑 2 per row */
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.why-card {
+    text-align: center;
+}
+
+/* IMAGE */
+.why-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+/* TEXT */
+.why-card p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* MOBILE */
+@media (max-width: 500px) {
+    .why-grid {
+        grid-template-columns: 1fr; /* 1 per row */
+    }
+}
+.facilities {
+    padding: 20px 20px;
+    width: 100%;          /* full width */
+    max-width: 100%;      /* remove limit */
+    margin: 0;            /* remove center alignment */
+}
+
+
+.fac-container {
+    max-width: 900px;   /* control width nicely */
+    margin: 0 auto;     /* center only content */
+}
+.fac-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* ITEM */
+.fac-item {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* HEADER */
+.fac-header {
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+/* PLUS ICON */
+.fac-header::after {
+    content: "+";
+    position: absolute;
+    right: 10px;
+}
+
+/* CONTENT */
+.fac-content {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 14px;
+    color: #6b7280;
+    padding: 0 12px;
+    transition: 0.3s ease;
+}
+
+/* ACTIVE STATE */
+.fac-item.active .fac-content {
+    max-height: 100px;
+    padding: 10px 12px;
+}
+
+.fac-item.active .fac-header::after {
+    content: "-";
+}
+/* SECTION */
+.location {
+    padding: 20px 20px;
+}
+
+/* TITLE */
+.loc-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.loc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 🔑 3 in row */
+    gap: 20px;
+}
+
+/* CARD */
+.loc-card {
+    background: #f9fafb;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+/* IMAGE */
+.loc-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* TITLE */
+.loc-card h3 {
+    font-size: 16px;
+    margin: 10px;
+    font-weight: 600;
+}
+
+/* TEXT */
+.loc-card p {
+    font-size: 13px;
+    margin: 0 10px 12px;
+    color: #6b7280;
+}
+
+/* HOVER */
+.loc-card:hover {
+    transform: translateY(-5px);
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+    .loc-grid {
+        grid-template-columns: 1fr 1fr; /* 2 per row */
+    }
+}
+
+@media (max-width: 500px) {
+    .loc-grid {
+        grid-template-columns: 1fr; /* 1 per row */
+    }
+}
+
+/* SECTION */
+.contact {
+    padding: 20px 20px;
+}
+
+/* TITLE */
+.contact-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+/* BOX */
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ITEM */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f9fafb;
+    transition: 0.3s;
+}
+
+/* ICON */
+.contact-item i {
+    font-size: 18px;
+    color: #2563eb;
+}
+
+/* TEXT */
+.contact-item span {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.contact-item p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111827;
+}
+
+/* HOVER */
+.contact-item:hover {
+    background: #eef2ff;
+}
+
+/* FOOTER */
+.footer {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 40px 20px 20px;
+}
+
+/* CONTAINER */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* SECTION */
+.footer-section {
+    flex: 1;
+    min-width: 160px;
+}
+
+/* BRAND TITLE */
+.footer-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+/* HEADINGS */
+.footer-section h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #c7d2fe;
+}
+
+/* LINKS */
+.footer-section p {
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: #9ca3af;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.footer-section p:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/* BOTTOM */
+.footer-bottom {
+    text-align: center;
+    margin-top: 25px;
+    border-top: 1px solid #1f2937;
+    padding-top: 12px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* SECTION */
+.faq {
+    padding: 20px 20px;
+}
+
+/* TITLE */
+.faq-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* ITEM */
+.faq-item {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* QUESTION */
+.faq-question {
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+/* + ICON */
+.faq-question::after {
+    content: "+";
+    position: absolute;
+    right: 10px;
+}
+
+/* ANSWER */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 14px;
+    color: #6b7280;
+    padding: 0 14px;
+    transition: 0.3s ease;
+}
+
+/* ACTIVE */
+.faq-item.active .faq-answer {
+    max-height: 120px;
+    padding: 10px 14px;
+}
+
+.faq-item.active .faq-question::after {
+    content: "-";
+}
+/* keep layout clean */
+.date-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* mobile fix */
+@media (max-width: 500px) {
+    .date-row {
+        flex-direction: column;
+    }
+}
+/* TOTAL PRICE */
+.total-price {
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #16a34a;
+    text-align: center;
+}
+/* FEATURES BELOW PRICE */
+.features-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.features-row span {
+    font-size: 12px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.features-row i {
+    color: #2563eb;
+    font-size: 12px;
+}
+/* MEMBERS DROPDOWN */
+#members {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    background: #f9fafb;
+    width: 100%;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+/* FOCUS EFFECT */
+#members:focus {
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+    outline: none;
+}
+
+/* HOVER */
+#members:hover {
+    border-color: #9ca3af;
+}
+/* VIDEO SAME SIZE AS IMAGE */
+.why-card video {
+    width: 100%;
+    height: 140px; /* same as your image */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+/* SPLASH SCREEN */
+#splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0f172a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* TITLE */
+/* TITLE */
+#splash h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: fadeUp 1s ease;
+}
+#splash h1 {
+    text-shadow: 0 0 15px rgba(96,165,250,0.3);
+}
+/* SUB TEXT */
+#splash p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    margin-top: 8px;
+    color: #60a5fa;
+    letter-spacing: 0.5px;
+    animation: fadeUp 1.5s ease;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+<div id="splash">
+    <h1>Vasvi Trust</h1>
+    <p>Millions of bookings</p>
+</div>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div>
+        <div class="nav-title">Vasvi</div>
+        <div class="nav-sub">Trust</div>
+    </div>
+    <div class="profile-icon">👤</div>
+</div>
+
+<!-- IMAGE -->
+<div class="hero"></div>
+<div class="intro">
+    <h2>Welcome to Vasvi Trust</h2>
+    <p>Enjoy comfortable and affordable stays with modern amenities. 
+    Perfect for families, business travelers, and events.</p>
+</div>
+<div class="features">
+
+    <div class="feature">
+        <i class="fa fa-bed"></i>
+        <p>100+ Rooms</p>
+    </div>
+
+    <div class="feature">
+        <i class="fa fa-leaf"></i>
+        <p>Eco Friendly</p>
+    </div>
+
+    <div class="feature">
+        <i class="fa fa-lock"></i>
+        <p>Secured</p>
+    </div>
+
+</div>
+<div class="booking">
+
+    <div class="booking-card">
+
+        <h2 class="booking-title">Book Your Stay</h2>
+
+        <div class="date-row">
+    <div class="input-group">
+        <label>Check-in Date</label>
+        <input type="date">
+    </div>
+
+    <div class="input-group">
+        <label>Check-in Time</label>
+        <input type="time">
+    </div>
+</div>
+
+<div class="date-row">
+    <div class="input-group">
+        <label>Check-out Date</label>
+        <input type="date">
+    </div>
+
+    <div class="input-group">
+        <label>Check-out Time</label>
+        <input type="time">
+    </div>
+</div>
+<div class="input-group">
+    <label>Room Type</label>
+    <select>
+        <option>Single Room</option>
+        <option>Double Room</option>
+        <option>Deluxe Room</option>
+        <option>Conference Hall</option>
+    </select>
+</div>
+<div class="input-group">
+    <label>Members</label>
+    <select id="members">
+        <option value="">Select Members</option>
+        <option>1 Member</option>
+        <option>2 Members</option>
+        <option>3 Members</option>
+        <option>4 Members</option>
+        <option>5 Members</option>
+        <option>6 Members</option>
+        <option>7 Members</option>
+        <option>8 Members</option>
+        <option>9 Members</option>
+        <option>10 Members</option>
+    </select>
+</div>
+<div class="input-group">
+    <label>Location</label>
+    <select>
+        <option>Varanasi</option>
+        <option>Arunachalam</option>
+        <option>Tirupathi</option>
+    </select>
+</div>
+
+        <button class="book-btn">Book Now</button>
+<p id="totalPrice" class="total-price" style="display:none;">
+    Total Price: ₹0
+</p>
+    </div>
+<!-- FEATURES -->
+
+</div>
+<div class="services">
+
+    <h2 class="section-title">Explore Rooms</h2>
+
+    <div class="services-scroll">
+
+        <div class="service-item">
+            <div class="card">
+                <img src="simgle.jpeg">
+            </div>
+            <p class="name">Single Room</p>
+            <p class="price">Starting from ₹200</p>
+            <div class="features-row">
+                <span><i class="fa fa-wifi"></i> WiFi</span>
+                <span><i class="fa fa-fan"></i> Fan</span>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="card">
+                <img src="double.jpeg">
+            </div>
+            <p class="name">Double Room</p>
+            <p class="price">Starting from ₹300</p>
+            <div class="features-row">
+                <span><i class="fa fa-wifi"></i> WiFi</span>
+                <span><i class="fa fa-snowflake"></i> AC</span>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="card">
+                <img src="Deluxe Room  .jpeg">
+            </div>
+            <p class="name">Deluxe Room</p>
+            <p class="price">Starting from ₹400</p>
+            <div class="features-row">
+                <span><i class="fa fa-wifi"></i> WiFi</span>
+                <span><i class="fa fa-snowflake"></i> AC</span>
+                <span><i class="fa fa-tv"></i> TV</span>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="card">
+                <img src="Conference Hall  .jpeg">
+            </div>
+            <p class="name">Conference Hall</p>
+            <p class="price">Starting from ₹500</p>
+            <div class="features-row">
+                <span><i class="fa fa-wifi"></i> WiFi</span>
+                <span><i class="fa fa-microphone"></i> Audio</span>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="card">
+                <img src="Dining Area  .jpeg">
+            </div>
+            <p class="name">Dining Area</p>
+            <p class="price">Starting from ₹250</p>
+            <div class="features-row">
+                <span><i class="fa fa-utensils"></i> Food</span>
+                <span><i class="fa fa-wifi"></i> WiFi</span>
+            </div>
+        </div>
+
+        <div class="service-item">
+            <div class="card">
+                <img src="706.jpg">
+            </div>
+            <p class="name">Parking Facility</p>
+            <p class="price">Starting from ₹100</p>
+            <div class="features-row">
+                <span><i class="fa fa-car"></i> Parking</span>
+                <span><i class="fa fa-shield-alt"></i> Security</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="why">
+    <h2 class="why-title">Why Choose Us</h2>
+
+    <div class="why-grid">
+
+       <div class="why-card">
+    <video autoplay muted loop playsinline>
+        <source src="1st.mp4" type="video/mp4">
+    </video>
+    <p>Clean & Comfortable Rooms</p>
+</div>
+
+        <div class="why-card">
+            <img src="Affordable Pricing  .jpeg">
+            <p>Affordable Pricing</p>
+        </div>
+
+        <div class="why-card">
+            <img src="help.jpg">
+            <p>24/7 Support</p>
+        </div>
+
+        <div class="why-card">
+            <img src="Prime Location  .jpg">
+            <p>Prime Location</p>
+        </div>
+
+    </div>
+</div>
+<div class="facilities">
+    <h2 class="fac-title">Facilities</h2>
+
+    <div class="fac-item">
+        <div class="fac-header" onclick="toggleFac(this)">
+            Free Wi-Fi
+        </div>
+        <div class="fac-content">
+            High-speed internet available in all rooms and common areas.
+        </div>
+    </div>
+
+    <div class="fac-item">
+        <div class="fac-header" onclick="toggleFac(this)">
+            Parking Available
+        </div>
+        <div class="fac-content">
+            Secure and spacious parking facility for all guests.
+        </div>
+    </div>
+
+    <div class="fac-item">
+        <div class="fac-header" onclick="toggleFac(this)">
+            Room Service
+        </div>
+        <div class="fac-content">
+            24/7 room service available for your comfort and convenience.
+        </div>
+    </div>
+
+    <div class="fac-item">
+        <div class="fac-header" onclick="toggleFac(this)">
+            Air Conditioning
+        </div>
+        <div class="fac-content">
+            Fully air-conditioned rooms for a comfortable stay.
+        </div>
+    </div>
+
+</div>
+<div class="location">
+    <h2 class="loc-title">Our Locations</h2>
+
+    <div class="loc-grid">
+
+        <div class="loc-card">
+            <img src="Varanasi .jpeg">
+            <h3>Varanasi</h3>
+            <p>Spiritual city on the banks of the Ganga</p>
+        </div>
+
+        <div class="loc-card">
+            <img src="xv.jpeg">
+            <h3>Arunachalam</h3>
+            <p>Peaceful temple town with divine atmosphere</p>
+        </div>
+
+        <div class="loc-card">
+            <img src="Vijawda.jpeg">
+            <h3>Vijayawada</h3>
+            <p>Well-connected city with modern facilities</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="faq">
+    <h2 class="faq-title">FAQs</h2>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            What is the check-in time?
+        </div>
+        <div class="faq-answer">
+            Check-in starts from 12:00 PM and check-out is before 11:00 AM.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            Do you provide parking?
+        </div>
+        <div class="faq-answer">
+            Yes, we provide secure parking for all guests.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            Is Wi-Fi available?
+        </div>
+        <div class="faq-answer">
+            Yes, high-speed Wi-Fi is available in all rooms.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+            Can I cancel my booking?
+        </div>
+        <div class="faq-answer">
+            Yes, cancellations are allowed based on our policy.
+        </div>
+    </div>
+
+</div>
+<div class="contact">
+    <h2 class="contact-title">Contact Us</h2>
+
+    <div class="contact-box">
+
+        <div class="contact-item">
+            <i class="fa fa-phone"></i>
+            <div>
+                <span>Phone</span>
+                <p>9876543210</p>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <i class="fa fa-envelope"></i>
+            <div>
+                <span>Email</span>
+                <p>vasvitrust@gmail.com</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="footer">
+
+    <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-section">
+            <h3>Vasvi Trust</h3>
+            <p>Comfortable and affordable stays for every traveler.</p>
+        </div>
+
+        <!-- BOOKING -->
+        <div class="footer-section">
+            <h4>Booking</h4>
+            <p>Rooms</p>
+            <p>Check Availability</p>
+            <p>Offers</p>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="footer-section">
+            <h4>Help & Support</h4>
+            <p>Contact Us</p>
+            <p>FAQs</p>
+            <p>Customer Support</p>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+        <p>© 2026 Vasvi Trust. All rights reserved.</p>
+    </div>
+
+</div>
+<script>
+    window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+    }, 4000); // 4 seconds
+});
+// ================= TOGGLE =================
+function toggleFac(element) {
+    element.parentElement.classList.toggle("active");
+}
+
+function toggleFAQ(element) {
+    element.parentElement.classList.toggle("active");
+}
+
+// ================= PRICE MAP =================
+const priceMap = {
+    "Single Room": 200,
+    "Double Room": 300,
+    "Deluxe Room": 400,
+    "Conference Hall": 500
+};
+
+// ================= GET ELEMENTS =================
+const checkInInput = document.querySelectorAll('input[type="date"]')[0];
+const checkOutInput = document.querySelectorAll('input[type="date"]')[1];
+
+const roomSelect = document.querySelector('select:nth-of-type(1)');
+const locationSelect = document.querySelector('select:nth-of-type(2)');
+const membersSelect = document.getElementById("members");
+
+const priceBox = document.getElementById("totalPrice");
+
+// ================= DISABLE PAST DATES =================
+let today = new Date().toISOString().split("T")[0];
+
+document.querySelectorAll('input[type="date"]').forEach(input => {
+    input.setAttribute("min", today);
+});
+
+// ================= CHECKOUT AFTER CHECKIN =================
+checkInInput.addEventListener("change", function () {
+    checkOutInput.min = this.value;
+});
+
+// ================= CALCULATE PRICE =================
+function calculatePrice() {
+    let checkIn = checkInInput.value;
+    let checkOut = checkOutInput.value;
+    let roomType = roomSelect.value;
+    let location = locationSelect.value;
+    let members = membersSelect.value;
+
+    // ❌ if anything missing → hide
+    if (!checkIn || !checkOut || !roomType || !location || !members) {
+        priceBox.style.display = "none";
+        return;
+    }
+
+    let start = new Date(checkIn);
+    let end = new Date(checkOut);
+
+    // ❌ invalid dates
+    if (end <= start) {
+        priceBox.style.display = "block";
+        priceBox.innerText = "Invalid dates";
+        return;
+    }
+
+    let diffDays = (end - start) / (1000 * 60 * 60 * 24);
+
+    let pricePerDay = priceMap[roomType] || 0;
+
+    // 🔥 MEMBERS LOGIC (simple)
+    let membersCount = parseInt(members);
+
+    // optional: extra charge after 2 members
+    if (membersCount > 2) {
+        pricePerDay += (membersCount - 2) * 50;
+    }
+
+    let total = diffDays * pricePerDay;
+
+    // ✅ show result
+    priceBox.style.display = "block";
+    priceBox.innerText = `Total Price: ₹${total} (${diffDays} nights, ${membersCount} members)`;
+}
+
+// ================= EVENT LISTENERS =================
+document.querySelectorAll('input, select').forEach(el => {
+    el.addEventListener("change", calculatePrice);
+});
+</script>
+</body>
+</html>
